@@ -153,6 +153,12 @@
           <h1>Hi There,<br> I'm <span class="hero-name">Srinath <span class="text-primary">Nulidonda</span></span></h1>
           <p class="mt-3 mb-4">I am into <span class="typed-text"></span></p>
 
+          <!-- Hero Availability Status -->
+          <div class="hero-availability">
+            <span>✅ Open to Work</span>
+            <span>💻 Freelance & Full-Time Opportunities</span>
+          </div>
+
           <!-- Hero Buttons -->
           <div class="d-flex">
             <a href="#about" class="btn btn-primary me-3">About Me <i class="fas fa-arrow-circle-down ms-2"></i></a>
@@ -179,7 +185,6 @@
       </div>
     </div>
   </section>
-
   <!-- ABOUT SECTION -->
   <section id="about" class="py-5">
     <div class="container" data-aos="fade-up">
@@ -436,11 +441,11 @@
     </div>
   </section>
 
-  <!-- CHAT WIDGET-->
+  <!-- CHAT WIDGET with New Icons -->
   <div class="chat-widget">
-    <!-- Chat Toggle Button -->
+    <!-- Chat Toggle Button with message icon -->
     <button class="chat-toggle" id="chatToggle" aria-label="Toggle chat">
-      <i class="fas fa-comments"></i>
+      <i class="fas fa-comment-dots"></i>
     </button>
 
     <!-- Chat Container -->
@@ -448,13 +453,21 @@
       <!-- Chat Header -->
       <div class="chat-header">
         <div class="chat-header-content">
-          <div class="chat-avatar"><i class="fas fa-robot"></i></div>
-          <h6 class="mb-1">Srinath's Assistant</h6>
-          <div class="chat-status">
-            <div class="status-indicator"></div>
-            <span>Online • Typically replies instantly</span>
+          <div class="chat-avatar">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div>
+            <h6>Srinath's Assistant</h6>
+            <div class="chat-status">
+              <div class="status-indicator"></div>
+              <span>Online • Quick replies</span>
+            </div>
           </div>
         </div>
+        <!-- Close button for mobile -->
+        <button class="chat-close" aria-label="Close chat">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
 
       <!-- Chat Body -->
@@ -462,12 +475,14 @@
         <!-- Welcome Message -->
         <div class="welcome-message">
           <h6>👋 Welcome!</h6>
-          <p>I'm here to help you learn more about Srinath and his work. Ask me anything!</p>
+          <p>Ask me about Srinath's skills, projects, or how to get in touch!</p>
         </div>
 
         <!-- Typing Indicator -->
         <div class="typing-indicator" id="typingIndicator">
-          <div class="message-avatar"><i class="fas fa-robot"></i></div>
+          <div class="message-avatar">
+            <i class="fas fa-user-headset"></i>
+          </div>
           <div class="typing-dots">
             <div class="typing-dot"></div>
             <div class="typing-dot"></div>
@@ -479,7 +494,7 @@
       <!-- Chat Input -->
       <div class="chat-input">
         <div class="input-group">
-          <input type="text" id="messageInput" placeholder="Type your message..." maxlength="500">
+          <input type="text" id="messageInput" placeholder="Type a message..." maxlength="500">
           <button class="send-button" id="sendButton" aria-label="Send message">
             <i class="fas fa-paper-plane"></i>
           </button>

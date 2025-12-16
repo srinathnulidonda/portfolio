@@ -1,254 +1,353 @@
-// Chatbot JavaScript Implementation for Srinath Nulidonda's Portfolio
+// Enhanced Chatbot Implementation - Fixed Mobile Close Button
 class SrinathChatbot {
     constructor() {
-        this.isOpen = false;
-        this.isTyping = false;
-        this.currentStep = 0;
-        this.userName = '';
-        this.userInterests = [];
-        
-        // Initialize chatbot
+        this.state = {
+            isOpen: false,
+            isTyping: false,
+            messageHistory: [],
+            userContext: {},
+            sessionStartTime: Date.now()
+        };
+
+        this.config = {
+            typingDelay: 1000,
+            typingVariation: 500,
+            maxHistoryLength: 50,
+            greetingDelay: 800,
+            whatsappNumber: '917013850214'
+        };
+
+        this.quickReplies = {
+            initial: ['About Srinath', 'View Projects', 'Contact Info', 'Skills'],
+            projects: ['Mobile Apps', 'AI/ML Projects', 'Web Development', 'All Projects'],
+            skills: ['Frontend', 'Backend', 'Mobile', 'AI/ML'],
+            contact: ['Email', 'LinkedIn', 'GitHub', 'Schedule Call']
+        };
+
         this.init();
-        
-        // Predefined responses based on Srinath's expertise
-        this.responses = {
-            greeting: [
-                "Hello! 👋 I'm Srinath's AI assistant. I'm here to tell you about his work in full-stack development, mobile apps, and AI/ML projects!",
-                "Hi there! 🚀 Welcome to Srinath's portfolio. I can help you learn about his projects, skills, or how to get in touch with him.",
-                "Hey! 😊 I'm excited to chat with you about Srinath's journey in tech - from Flutter apps to AI travel recommendations!"
-            ],
-            
-            about: [
-                "Srinath is a passionate 21-year-old full-stack developer from Hyderabad, India! 🇮🇳 He specializes in web development, mobile apps with Flutter, and AI/ML projects. He's currently pursuing his Bachelor's in Engineering while building amazing digital solutions.",
-                "Great question! Srinath combines frontend expertise (React, HTML/CSS/JS) with backend skills (Flask, Python) and mobile development (Flutter/Dart). He's also passionate about AI/ML, having built travel recommendation systems and drug discovery platforms!"
-            ],
-            
-            projects: [
-                "Srinath has built some incredible projects! 🎯 His standout work includes:\n\n📱 Mobile Apps: Manga reading app & Weather forecast app (Flutter)\n🤖 AI Projects: Travel recommendation system & Drug discovery platform\n🌍 Travel Sites: Beautiful guides for NYC, Rome & Paris\n💼 E-commerce platforms\n\nWhich type interests you most?",
-                "His project portfolio is diverse! From AI-powered travel recommendations using TensorFlow to elegant Flutter mobile apps. He's also created agriculture price prediction systems and interactive travel websites. Want to know more about any specific project?"
-            ],
-            
-            skills: [
-                "Srinath's tech stack is impressive! 💻\n\n🎨 Frontend: HTML5, CSS3, JavaScript, React\n⚙️ Backend: Flask, Python, Node.js\n📱 Mobile: Flutter, Dart\n🤖 AI/ML: TensorFlow, Scikit-learn, NLTK\n🗄️ Database: SQLAlchemy, MongoDB\n☁️ Other: Git, API Integration, Responsive Design\n\nHe's also learning Java and exploring new technologies constantly!"
-            ],
-            
-            contact: [
-                "Ready to connect with Srinath? 📬 Here are the best ways:\n\n✉️ Email: srinathnulidonda@gmail.com\n💼 LinkedIn: linkedin.com/in/srinath-nulidonda-1a4230256/\n🐙 GitHub: github.com/Srinathnulidonda\n🐦 Twitter: @srinath2973\n\nHe typically responds within 24 hours and loves discussing new project ideas!"
-            ],
-            
-            java: [
-                "Yes! Srinath is expanding his skills in Java ☕ He's interested in enterprise development and Android app development with Java. His strong foundation in programming concepts makes picking up Java natural for him!",
-                "Java is definitely on Srinath's learning path! With his experience in Python and Dart, he's exploring Java for backend development and Android apps. The transition has been smooth given his solid programming fundamentals."
-            ],
-            
-            python: [
-                "Python is one of Srinath's strongest languages! 🐍 He uses it extensively for:\n\n🤖 AI/ML projects with TensorFlow & Scikit-learn\n🌐 Web development with Flask\n📊 Data analysis and processing\n🔧 Automation scripts\n\nHis travel recommendation and drug discovery projects showcase his Python expertise beautifully!"
-            ],
-            
-            flutter: [
-                "Flutter is Srinath's go-to for mobile development! 📱 He's built beautiful apps like:\n\n📖 Manga reading app with offline capabilities\n🌤️ Weather forecast app with real-time updates\n\nHe loves Flutter's cross-platform capabilities and how it lets him create native-quality apps for both iOS and Android!"
-            ],
-            
-            ai: [
-                "AI/ML is where Srinath really shines! 🤖 His projects include:\n\n✈️ Travel recommendation system using ML algorithms\n💊 Drug discovery platform with molecular analysis\n🌾 Agriculture price prediction using weather data\n\nHe uses TensorFlow, Scikit-learn, and NLTK to build intelligent solutions that solve real-world problems!"
-            ],
-            
-            hire: [
-                "Srinath is open to exciting opportunities! 💼 He's particularly interested in:\n\n🚀 Full-stack development projects\n📱 Mobile app development\n🤖 AI/ML implementations\n🌟 Innovative tech solutions\n\nFeel free to reach out via email or LinkedIn to discuss potential collaborations!"
-            ],
-            
-            location: [
-                "Srinath is based in Hyderabad, India 🇮🇳 - a major tech hub! He's open to remote work opportunities and has experience collaborating with international teams. The time zone works great for both Asian and European clients."
-            ],
-            
-            experience: [
-                "While Srinath is 21 and early in his career, his portfolio speaks volumes! 📈 He's built multiple production-ready applications, from AI-powered systems to mobile apps. His combination of academic learning and hands-on project experience makes him a valuable developer."
-            ],
-            
-            learning: [
-                "Srinath is always learning! 📚 Currently he's diving deeper into:\n\n☕ Java for enterprise development\n🔧 Advanced AI/ML techniques\n☁️ Cloud technologies\n🎯 System design principles\n\nHis curiosity and dedication to growth are what make him special!"
-            ],
-            
-            default: [
-                "That's a great question! I'd love to help you learn more about Srinath's work. You can ask me about his projects, skills, how to contact him, or anything else you'd like to know! 🤔",
-                "Interesting! While I might not have specific info on that, I can tell you about Srinath's projects, technical skills, or how to get in touch with him directly. What would you like to know? 😊",
-                "I'm here to help! Feel free to ask about Srinath's development work, his AI/ML projects, mobile apps, or how to connect with him for potential collaborations! 🚀"
-            ]
-        };
-        
-        // Keywords for response matching
-        this.keywords = {
-            greeting: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening'],
-            about: ['about', 'who', 'bio', 'background', 'story', 'srinath', 'tell me about'],
-            projects: ['projects', 'work', 'portfolio', 'built', 'created', 'developed', 'apps', 'websites'],
-            skills: ['skills', 'technologies', 'tech stack', 'programming', 'languages', 'frameworks', 'tools'],
-            contact: ['contact', 'reach', 'email', 'linkedin', 'github', 'connect', 'get in touch'],
-            java: ['java', 'java development', 'enterprise', 'spring'],
-            python: ['python', 'flask', 'django', 'data science', 'machine learning'],
-            flutter: ['flutter', 'dart', 'mobile', 'android', 'ios', 'cross-platform'],
-            ai: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'tensorflow', 'data science'],
-            hire: ['hire', 'work', 'job', 'opportunity', 'freelance', 'collaborate', 'available'],
-            location: ['location', 'where', 'hyderabad', 'india', 'remote', 'timezone'],
-            experience: ['experience', 'years', 'senior', 'junior', 'level'],
-            learning: ['learning', 'studying', 'new', 'future', 'plans', 'goals']
-        };
+        this.responses = this.initResponses();
+        this.keywords = this.initKeywords();
     }
-    
+
     init() {
+        this.cacheDOMElements();
         this.bindEvents();
-        this.hideTypingIndicator();
+        this.loadChatHistory();
+        this.initAnimations();
     }
-    
+
+    cacheDOMElements() {
+        this.elements = {
+            toggle: document.getElementById('chatToggle'),
+            container: document.getElementById('chatContainer'),
+            body: document.getElementById('chatBody'),
+            input: document.getElementById('messageInput'),
+            sendBtn: document.getElementById('sendButton'),
+            whatsappBtn: document.getElementById('whatsappButton'),
+            typingIndicator: document.getElementById('typingIndicator')
+        };
+    }
+
     bindEvents() {
-        const chatToggle = document.getElementById('chatToggle');
-        const chatContainer = document.getElementById('chatContainer');
-        const messageInput = document.getElementById('messageInput');
-        const sendButton = document.getElementById('sendButton');
-        const whatsappButton = document.getElementById('whatsappButton');
-        
         // Toggle chat
-        chatToggle.addEventListener('click', () => this.toggleChat());
-        
-        // Send message on button click
-        sendButton.addEventListener('click', () => this.sendMessage());
-        
-        // Send message on Enter key
-        messageInput.addEventListener('keypress', (e) => {
+        this.elements.toggle?.addEventListener('click', () => this.toggleChat());
+
+        // Close button (mobile) - Fixed: Direct query and explicit close
+        document.addEventListener('click', (e) => {
+            // Check if clicked element is close button or its child
+            if (e.target.closest('.chat-close')) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeChat();
+            }
+        });
+
+        // Send message
+        this.elements.sendBtn?.addEventListener('click', () => this.handleSendMessage());
+
+        // Enter key handling
+        this.elements.input?.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
-                this.sendMessage();
+                this.handleSendMessage();
             }
         });
-        
-        // WhatsApp button
-        whatsappButton.addEventListener('click', () => this.openWhatsApp());
-        
-        // Close chat when clicking outside
+
+        // WhatsApp redirect
+        this.elements.whatsappBtn?.addEventListener('click', () => this.openWhatsApp());
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.state.isOpen) {
+                this.closeChat();
+            }
+        });
+
+        // Handle quick replies
         document.addEventListener('click', (e) => {
-            if (!chatContainer.contains(e.target) && !chatToggle.contains(e.target)) {
-                if (this.isOpen) {
-                    this.toggleChat();
-                }
+            if (e.target.classList.contains('quick-reply')) {
+                this.handleQuickReply(e.target.textContent);
+            }
+        });
+
+        // Close chat when clicking outside (optional)
+        document.addEventListener('click', (e) => {
+            if (this.state.isOpen &&
+                !this.elements.container?.contains(e.target) &&
+                !this.elements.toggle?.contains(e.target)) {
+                // Uncomment if you want to close when clicking outside
+                // this.closeChat();
             }
         });
     }
-    
+
+    initResponses() {
+        return {
+            greeting: [
+                {
+                    text: "Hello! 👋 I'm Srinath's AI assistant. How can I help you today?",
+                    quickReplies: this.quickReplies.initial
+                }
+            ],
+            about: [
+                {
+                    text: "Srinath is a 21-year-old Full Stack Developer from Hyderabad, India 🇮🇳\n\n🎓 Currently pursuing B.E. in Engineering\n💼 Specializes in Web, Mobile & AI/ML development\n🚀 Passionate about creating innovative digital solutions\n\nWould you like to know about his projects or skills?",
+                    quickReplies: ['View Projects', 'Technical Skills', 'Contact Him']
+                }
+            ],
+            projects: [
+                {
+                    text: "Here are Srinath's key projects:\n\n📱 **Mobile Apps**\n• Manga Reading App (Flutter)\n• Weather Forecast App\n\n🤖 **AI/ML Projects**\n• Travel Recommendation System\n• Drug Discovery Platform\n• Agriculture Price Prediction\n\n🌐 **Web Development**\n• E-commerce Platform\n• Travel Guides (NYC, Rome, Paris)\n\nWhich category interests you?",
+                    quickReplies: this.quickReplies.projects
+                }
+            ],
+            skills: [
+                {
+                    text: "Srinath's Technical Expertise:\n\n**Frontend** 🎨\n• HTML5, CSS3, JavaScript\n• React, Bootstrap, Tailwind\n\n**Backend** ⚙️\n• Flask, Python, Node.js\n• REST APIs, Authentication\n\n**Mobile** 📱\n• Flutter, Dart\n• Cross-platform Development\n\n**AI/ML** 🤖\n• TensorFlow, Scikit-learn\n• NLTK, Data Analysis\n\nWhat would you like to explore?",
+                    quickReplies: this.quickReplies.skills
+                }
+            ],
+            contact: [
+                {
+                    text: "Let's connect with Srinath:\n\n📧 **Email**: srinathnulidonda@gmail.com\n💼 **LinkedIn**: [Connect on LinkedIn](https://linkedin.com/in/srinath-nulidonda-1a4230256/)\n🐙 **GitHub**: [View Projects](https://github.com/Srinathnulidonda)\n🐦 **Twitter**: @srinath2973\n\nResponse time: Usually within 24 hours",
+                    quickReplies: this.quickReplies.contact
+                }
+            ],
+            mobile: [
+                {
+                    text: "Srinath's Mobile Development:\n\n📱 **Flutter Expertise**\n• Cross-platform apps (iOS & Android)\n• Beautiful UI/UX with Material Design\n• State management & API integration\n\n**Featured Apps:**\n• 📖 Manga Reading App - Offline reading, bookmarks\n• 🌤️ Weather App - Real-time updates, location services\n\nInterested in mobile app development?",
+                    quickReplies: ['View Portfolio', 'Contact for Project']
+                }
+            ],
+            ai: [
+                {
+                    text: "AI/ML Projects by Srinath:\n\n🤖 **Travel Recommendation System**\n• Machine Learning algorithms\n• Personalized suggestions\n• TensorFlow & Scikit-learn\n\n💊 **Drug Discovery Platform**\n• Molecular structure analysis\n• Predictive modeling\n\n🌾 **Agriculture Price Prediction**\n• Weather data integration\n• Market analysis\n\nWant to discuss AI solutions?",
+                    quickReplies: ['Learn More', 'Start AI Project']
+                }
+            ],
+            hire: [
+                {
+                    text: "Great! Srinath is available for:\n\n✅ Full-time positions\n✅ Freelance projects\n✅ Technical consulting\n✅ Startup collaborations\n\n**Availability**: Immediate\n**Location**: Hyderabad, India\n**Remote**: Yes, available\n\nLet's discuss your requirements!",
+                    quickReplies: ['Send Email', 'WhatsApp Chat', 'View Resume']
+                }
+            ],
+            error: [
+                {
+                    text: "I didn't quite catch that. Here are some things you can ask me about:\n\n• Srinath's background and experience\n• His projects and portfolio\n• Technical skills and expertise\n• How to get in touch\n\nWhat would you like to know?",
+                    quickReplies: this.quickReplies.initial
+                }
+            ]
+        };
+    }
+
+    initKeywords() {
+        return {
+            greeting: /^(hi|hello|hey|greetings|good\s+(morning|afternoon|evening))$/i,
+            about: /about|who|bio|background|story|srinath|tell\s+me/i,
+            projects: /project|portfolio|work|built|created|developed|apps|websites/i,
+            skills: /skill|tech|stack|programming|language|framework|tool/i,
+            contact: /contact|reach|email|linkedin|github|connect|touch|call/i,
+            mobile: /mobile|flutter|dart|android|ios|app/i,
+            ai: /ai|artificial|intelligence|machine|learning|ml|tensorflow|data/i,
+            hire: /hire|job|opportunity|freelance|work|available|collaborate/i
+        };
+    }
+
     toggleChat() {
-        const chatContainer = document.getElementById('chatContainer');
-        const chatToggle = document.getElementById('chatToggle');
-        
-        this.isOpen = !this.isOpen;
-        
-        if (this.isOpen) {
-            chatContainer.classList.add('active');
-            chatToggle.classList.add('active');
-            document.getElementById('messageInput').focus();
-            
-            // Send initial greeting if no messages yet
-            if (document.querySelectorAll('.message').length === 0) {
-                setTimeout(() => this.sendBotMessage(this.getRandomResponse('greeting')), 1000);
-            }
+        this.state.isOpen = !this.state.isOpen;
+
+        if (this.state.isOpen) {
+            this.openChat();
         } else {
-            chatContainer.classList.remove('active');
-            chatToggle.classList.remove('active');
+            this.closeChat();
         }
     }
-    
-    sendMessage() {
-        const messageInput = document.getElementById('messageInput');
-        const message = messageInput.value.trim();
-        
-        if (message === '' || this.isTyping) return;
-        
+
+    openChat() {
+        this.state.isOpen = true;
+        this.elements.container?.classList.add('active');
+        this.elements.toggle?.classList.add('active');
+        this.elements.input?.focus();
+
+        // Send greeting on first open
+        if (this.state.messageHistory.length === 0) {
+            setTimeout(() => {
+                this.sendBotMessage(this.responses.greeting[0]);
+            }, this.config.greetingDelay);
+        }
+
+        // Track chat open
+        this.trackEvent('chat_opened');
+    }
+
+    closeChat() {
+        this.state.isOpen = false;
+        this.elements.container?.classList.remove('active');
+        this.elements.toggle?.classList.remove('active');
+
+        // Save chat history
+        this.saveChatHistory();
+
+        // Track chat close
+        this.trackEvent('chat_closed');
+    }
+
+    handleSendMessage() {
+        const message = this.elements.input?.value.trim();
+
+        if (!message || this.state.isTyping) return;
+
         // Add user message
         this.addUserMessage(message);
-        messageInput.value = '';
-        
-        // Show typing indicator and respond
+
+        // Clear input
+        this.elements.input.value = '';
+
+        // Process and respond
+        this.processUserMessage(message);
+    }
+
+    handleQuickReply(text) {
+        this.addUserMessage(text);
+        this.processUserMessage(text);
+    }
+
+    processUserMessage(message) {
+        // Show typing indicator
         this.showTypingIndicator();
-        
+
+        // Calculate response delay
+        const delay = this.config.typingDelay + Math.random() * this.config.typingVariation;
+
         setTimeout(() => {
             const response = this.generateResponse(message);
             this.sendBotMessage(response);
-        }, 1500 + Math.random() * 1000); // Simulate thinking time
+        }, delay);
     }
-    
-    addUserMessage(message) {
-        const chatBody = document.getElementById('chatBody');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message user-message';
-        messageDiv.innerHTML = `
-            <div class="message-content">${this.escapeHtml(message)}</div>
-            <div class="message-time">${this.getCurrentTime()}</div>
-        `;
-        
-        chatBody.appendChild(messageDiv);
-        this.scrollToBottom();
-    }
-    
-    sendBotMessage(message) {
-        this.hideTypingIndicator();
-        
-        const chatBody = document.getElementById('chatBody');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'message bot-message';
-        messageDiv.innerHTML = `
-            <div class="message-avatar">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="message-content">${this.formatMessage(message)}</div>
-            <div class="message-time">${this.getCurrentTime()}</div>
-        `;
-        
-        chatBody.appendChild(messageDiv);
-        this.scrollToBottom();
-    }
-    
+
     generateResponse(userMessage) {
         const message = userMessage.toLowerCase();
-        
-        // Check for keywords and return appropriate response
-        for (const [category, keywords] of Object.entries(this.keywords)) {
-            if (keywords.some(keyword => message.includes(keyword))) {
-                return this.getRandomResponse(category);
+
+        // Check each keyword pattern
+        for (const [category, pattern] of Object.entries(this.keywords)) {
+            if (pattern.test(message)) {
+                const responses = this.responses[category];
+                return responses[Math.floor(Math.random() * responses.length)];
             }
         }
-        
+
+        // Check for specific quick reply matches
+        if (message.includes('view resume')) {
+            window.open('assets/resume.pdf', '_blank');
+            return { text: "Opening Srinath's resume in a new tab! 📄", quickReplies: this.quickReplies.initial };
+        }
+
+        if (message.includes('send email')) {
+            window.location.href = 'mailto:srinathnulidonda@gmail.com';
+            return { text: "Opening your email client to contact Srinath! 📧", quickReplies: this.quickReplies.initial };
+        }
+
         // Default response
-        return this.getRandomResponse('default');
+        return this.responses.error[0];
     }
-    
-    getRandomResponse(category) {
-        const responses = this.responses[category] || this.responses.default;
-        return responses[Math.floor(Math.random() * responses.length)];
+
+    addUserMessage(text) {
+        const messageHTML = `
+            <div class="message user-message" data-time="${Date.now()}">
+                <div class="message-content">${this.escapeHtml(text)}</div>
+                <div class="message-time">${this.getCurrentTime()}</div>
+            </div>
+        `;
+
+        this.elements.body?.insertAdjacentHTML('beforeend', messageHTML);
+        this.scrollToBottom();
+
+        // Add to history
+        this.state.messageHistory.push({ type: 'user', text, time: Date.now() });
+        this.trimHistory();
     }
-    
-    formatMessage(message) {
-        // Convert markdown-style formatting to HTML
-        return message
+
+    sendBotMessage(response) {
+        this.hideTypingIndicator();
+
+        const messageHTML = `
+            <div class="message bot-message" data-time="${Date.now()}">
+                <div class="message-avatar">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="message-wrapper">
+                    <div class="message-content">${this.formatMessage(response.text)}</div>
+                    ${response.quickReplies ? this.createQuickReplies(response.quickReplies) : ''}
+                    <div class="message-time">${this.getCurrentTime()}</div>
+                </div>
+            </div>
+        `;
+
+        this.elements.body?.insertAdjacentHTML('beforeend', messageHTML);
+        this.scrollToBottom();
+
+        // Add to history
+        this.state.messageHistory.push({ type: 'bot', ...response, time: Date.now() });
+        this.trimHistory();
+    }
+
+    createQuickReplies(replies) {
+        const buttons = replies.map(reply =>
+            `<button class="quick-reply">${reply}</button>`
+        ).join('');
+
+        return `<div class="quick-replies">${buttons}</div>`;
+    }
+
+    formatMessage(text) {
+        return text
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/\n/g, '<br>');
+            .replace(/\n/g, '<br>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
     }
-    
+
     showTypingIndicator() {
-        this.isTyping = true;
-        const typingIndicator = document.getElementById('typingIndicator');
-        typingIndicator.style.display = 'flex';
-        this.scrollToBottom();
+        this.state.isTyping = true;
+        if (this.elements.typingIndicator) {
+            this.elements.typingIndicator.style.display = 'flex';
+            this.scrollToBottom();
+        }
     }
-    
+
     hideTypingIndicator() {
-        this.isTyping = false;
-        const typingIndicator = document.getElementById('typingIndicator');
-        typingIndicator.style.display = 'none';
+        this.state.isTyping = false;
+        if (this.elements.typingIndicator) {
+            this.elements.typingIndicator.style.display = 'none';
+        }
     }
-    
+
     scrollToBottom() {
-        const chatBody = document.getElementById('chatBody');
-        chatBody.scrollTop = chatBody.scrollHeight;
+        if (this.elements.body) {
+            this.elements.body.scrollTop = this.elements.body.scrollHeight;
+        }
     }
-    
+
     getCurrentTime() {
         return new Date().toLocaleTimeString('en-US', {
             hour: '2-digit',
@@ -256,42 +355,78 @@ class SrinathChatbot {
             hour12: false
         });
     }
-    
+
     escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
-    
+
     openWhatsApp() {
-        const phoneNumber = '917013850214'; // Replace with Srinath's actual WhatsApp number
-        const message = encodeURIComponent('Hi Srinath! I visited your portfolio and would like to discuss potential collaboration opportunities.');
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.open(whatsappUrl, '_blank');
+        const message = encodeURIComponent(
+            "Hi Srinath! I visited your portfolio and I'm interested in discussing a project with you."
+        );
+        const url = `https://wa.me/${this.config.whatsappNumber}?text=${message}`;
+        window.open(url, '_blank');
+
+        this.trackEvent('whatsapp_opened');
+    }
+
+    saveChatHistory() {
+        try {
+            localStorage.setItem('chatHistory', JSON.stringify(this.state.messageHistory));
+        } catch (e) {
+            console.error('Failed to save chat history:', e);
+        }
+    }
+
+    loadChatHistory() {
+        try {
+            const history = localStorage.getItem('chatHistory');
+            if (history) {
+                this.state.messageHistory = JSON.parse(history);
+            }
+        } catch (e) {
+            console.error('Failed to load chat history:', e);
+        }
+    }
+
+    trimHistory() {
+        if (this.state.messageHistory.length > this.config.maxHistoryLength) {
+            this.state.messageHistory = this.state.messageHistory.slice(-this.config.maxHistoryLength);
+        }
+    }
+
+    trackEvent(eventName, data = {}) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, {
+                event_category: 'Chatbot',
+                event_label: 'Portfolio Chatbot',
+                ...data
+            });
+        }
+    }
+
+    initAnimations() {
+        setTimeout(() => {
+            this.elements.toggle?.classList.add('pulse');
+            setTimeout(() => {
+                this.elements.toggle?.classList.remove('pulse');
+            }, 3000);
+        }, 5000);
+
+        setInterval(() => {
+            if (!this.state.isOpen) {
+                this.elements.toggle?.classList.add('subtle-bounce');
+                setTimeout(() => {
+                    this.elements.toggle?.classList.remove('subtle-bounce');
+                }, 1000);
+            }
+        }, 30000);
     }
 }
 
-// Initialize chatbot when DOM is loaded
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new SrinathChatbot();
-});
-
-// Add some interactive features
-document.addEventListener('DOMContentLoaded', () => {
-    // Animate chat toggle button
-    const chatToggle = document.getElementById('chatToggle');
-    
-    // Add pulse animation on page load
-    setTimeout(() => {
-        chatToggle.classList.add('pulse');
-        setTimeout(() => chatToggle.classList.remove('pulse'), 2000);
-    }, 3000);
-    
-    // Add periodic subtle animations
-    setInterval(() => {
-        if (!document.getElementById('chatContainer').classList.contains('active')) {
-            chatToggle.classList.add('subtle-bounce');
-            setTimeout(() => chatToggle.classList.remove('subtle-bounce'), 1000);
-        }
-    }, 30000); // Every 30 seconds
+    window.srinathChatbot = new SrinathChatbot();
 });
