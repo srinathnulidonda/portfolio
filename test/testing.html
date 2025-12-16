@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About Layouts – Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #050715;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 0;
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 16px 80px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8f9bb8;
+            margin-bottom: 8px;
+        }
+
+        .badge-primary {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            background: rgba(10, 42, 159, 0.15);
+            color: #aab8ff;
+            border: 1px solid rgba(10, 42, 159, 0.5);
+        }
+
+        .primary {
+            color: #0A2A9F;
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn-primary,
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #0A2A9F;
+            color: #fff;
+            border: 1px solid #0A2A9F;
+        }
+
+        .btn-primary:hover {
+            background: #071f73;
+            border-color: #071f73;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #d0d5ff;
+            border: 1px solid rgba(160, 170, 220, 0.6);
+        }
+
+        .btn-outline:hover {
+            background: rgba(10, 42, 159, 0.15);
+            border-color: #0A2A9F;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 12px;
+            margin: 4px 4px 0 0;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .divider {
+            height: 1px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent);
+            margin: 24px 0;
+            opacity: 0.6;
+        }
+
+        .section-block {
+            margin: 40px 0;
+            padding: 24px 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: radial-gradient(circle at top left, rgba(10, 42, 159, 0.2), transparent 55%);
+        }
+
+        /* Layout 1 */
+        .about-layout-1 {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .about-layout-1 .avatar {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 3/4;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #0A2A9F, #111426);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-layout-1 .avatar::after {
+            content: "SN";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 56px;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .about-layout-1 h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .about-layout-1 .role {
+            font-size: 14px;
+            color: #9fa8d8;
+            margin-bottom: 16px;
+        }
+
+        .about-layout-1 .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: #c2c7e4;
+            margin-top: 18px;
+        }
+
+        /* Layout 2 */
+        .about-layout-2 h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about-layout-2 .quote {
+            font-size: 15px;
+            color: #c8cffb;
+            font-style: italic;
+            border-left: 3px solid #0A2A9F;
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        .about-layout-2 .philosophy-list {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 14px;
+            color: #cdd3ff;
+        }
+
+        .about-layout-2 .pill-row {
+            margin-top: 14px;
+        }
+
+        /* Layout 3 */
+        .about-layout-3 h2 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .about-layout-3 .role-line {
+            font-size: 13px;
+            color: #aeb6e8;
+            margin-bottom: 14px;
+        }
+
+        .about-layout-3 .mission {
+            font-size: 14px;
+            color: #d4dafc;
+            margin-bottom: 16px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .skill-card {
+            border-radius: 10px;
+            padding: 10px;
+            background: rgba(8, 10, 22, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-card h4 {
+            font-size: 12px;
+            margin-bottom: 6px;
+            color: #e0e4ff;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-card li {
+            margin-bottom: 3px;
+            color: #b7c0f5;
+        }
+
+        .highlight-projects {
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        .highlight-projects ul {
+            padding-left: 18px;
+            margin: 6px 0 0;
+        }
+
+        @media (max-width: 900px) {
+            .about-layout-1 {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .skill-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-block {
+                padding: 18px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- ========================= -->
+        <!-- LAYOUT 1: BALANCED PRO   -->
+        <!-- ========================= -->
+        <section class="section-block">
+            <div class="section-label">Layout 1 — Balanced Professional</div>
+
+            <div class="about-layout-1">
+                <!-- LEFT: Avatar / Visual -->
+                <div>
+                    <div class="avatar"></div>
+                </div>
+
+                <!-- RIGHT: Text Content -->
+                <div>
+                    <span class="badge-primary">About Me</span>
+                    <h2>Hi, I’m <span class="primary">Srinath Nulidonda</span></h2>
+                    <div class="role">Full Stack Developer &amp; AI Specialist · Hyderabad, India</div>
+
+                    <p>
+                        I design and build intelligent digital products that connect clean design with solid
+                        engineering.
+                        From web apps and mobile experiences to AI-powered systems, I focus on solving real problems
+                        with
+                        interfaces that feel fast, clear, and human.
+                    </p>
+                    <p>
+                        My work spans travel tech, agriculture, healthcare, and content platforms — where I use tools
+                        like
+                        React, Flutter, Flask, TensorFlow, and Firebase to turn ideas into working products.
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <div>
+                        <strong style="font-size:13px; color:#cdd3ff;">Core Stack</strong><br />
+                        <span class="pill">React</span>
+                        <span class="pill">Flutter</span>
+                        <span class="pill">Flask</span>
+                        <span class="pill">TensorFlow</span>
+                        <span class="pill">Firebase</span>
+                    </div>
+
+                    <div class="meta-row">
+                        <div>📂 <strong>Projects:</strong> Travel AI · Manga App · AgriPrice Prediction · more</div>
+                        <div>🎯 <strong>Focus:</strong> UX, performance, and practical AI</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <a href="assets/resume.pdf" class="btn-primary" target="_blank" rel="noopener">View Resume</a>
+                        <a href="#projects" class="btn-outline">View Projects</a>
+                        <a href="#contact" class="btn-outline">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- LAYOUT 2: CINEMATIC STORY -->
+        <!-- ========================= -->
+        <section class="section-block">
+            <div class="section-label">Layout 2 — Cinematic Story</div>
+
+            <div class="about-layout-2">
+                <span class="badge-primary">Story Mode</span>
+                <h2>Framing Code Like a Film</h2>
+
+                <p class="quote">
+                    “Every project I build starts like a film shot — with a frame, a mood, and a story to tell.”
+                </p>
+
+                <p>
+                    I’m <strong>Srinath Nulidonda</strong> — a developer who thinks like a filmmaker and builds
+                    like an engineer. I love crafting experiences where visuals, motion, and logic feel
+                    intentional, not accidental.
+                </p>
+
+                <p>
+                    Whether it’s an AI travel recommendation system, a manga reading app, or an agri-intelligence tool,
+                    I focus on three things: clarity, emotion, and performance. The UI should be cinematic.
+                    The architecture should be reliable. The experience should be memorable.
+                </p>
+
+                <div class="divider"></div>
+
+                <h3 style="font-size:16px; margin-bottom:6px;">My Work Philosophy</h3>
+                <ul class="philosophy-list">
+                    <li>Design like an artist, code like an engineer.</li>
+                    <li>Make complex systems feel simple to real people.</li>
+                    <li>Ship clean, maintainable products — not just demos.</li>
+                </ul>
+
+                <div class="pill-row">
+                    <span class="pill">React &amp; modern web</span>
+                    <span class="pill">Flutter mobile apps</span>
+                    <span class="pill">AI &amp; ML workflows</span>
+                    <span class="pill">APIs &amp; backend logic</span>
+                </div>
+
+                <div class="btn-row">
+                    <a href="#projects" class="btn-primary">Explore My Work</a>
+                    <a href="assets/resume.pdf" class="btn-outline" target="_blank" rel="noopener">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= -->
+        <!-- LAYOUT 3: TECH GRID      -->
+        <!-- ========================= -->
+        <section class="section-block">
+            <div class="section-label">Layout 3 — Tech-Focused Grid</div>
+
+            <div class="about-layout-3">
+                <span class="badge-primary">Profile</span>
+                <h2>About Srinath</h2>
+                <div class="role-line">
+                    Full Stack Developer · AI &amp; ML Enthusiast · Problem Solver
+                </div>
+
+                <div class="mission">
+                    <strong>Mission:</strong> Build intelligent systems that make decisions easier for real people —
+                    from travelers and farmers to everyday users consuming content.
+                </div>
+
+                <h3 style="font-size:15px; margin-bottom:8px;">Skills Matrix</h3>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <h4>Frontend</h4>
+                        <ul>
+                            <li>React</li>
+                            <li>HTML &amp; CSS</li>
+                            <li>JavaScript</li>
+                            <li>Responsive UI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Mobile</h4>
+                        <ul>
+                            <li>Flutter</li>
+                            <li>Dart</li>
+                            <li>State Management</li>
+                            <li>API Integration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Backend</h4>
+                        <ul>
+                            <li>Flask</li>
+                            <li>REST APIs</li>
+                            <li>Auth &amp; sessions</li>
+                            <li>SQL / NoSQL basics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h4>AI / Data</h4>
+                        <ul>
+                            <li>ML Models</li>
+                            <li>TensorFlow / sklearn</li>
+                            <li>Basic NLP</li>
+                            <li>Data Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-projects">
+                    <strong>Highlight Projects</strong>
+                    <ul>
+                        <li>AI Travel Recommendation System</li>
+                        <li>Agriculture Price Prediction Platform</li>
+                        <li>Manga Reading Mobile App</li>
+                        <li>Drug Discovery Exploration Tool</li>
+                    </ul>
+                </div>
+
+                <div class="btn-row">
+                    <a href="#projects" class="btn-primary">See Projects</a>
+                    <a href="https://github.com/Srinathnulidonda" class="btn-outline" target="_blank"
+                        rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/srinath-nulidonda-1a4230256" class="btn-outline"
+                        target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>

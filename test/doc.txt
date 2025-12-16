@@ -1,0 +1,26 @@
+1. index.html 
+
+
+
+2. navbar.css 
+
+
+3. hero.css 
+
+
+4. about.css 
+
+
+5. projects.css 
+
+
+6. contact.css 
+
+
+7. footer.css 
+
+
+8. projects.js 
+
+
+9. script.js 

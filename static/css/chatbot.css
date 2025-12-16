@@ -1,5 +1,3 @@
-/* Enhanced Chatbot CSS Implementation for Srinath Nulidonda's Portfolio - Compact Version */
-
 /* Chat Widget Container */
 .chat-widget {
     position: fixed;
@@ -68,10 +66,12 @@
         box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
         transform: scale(1);
     }
+
     50% {
         box-shadow: 0 8px 32px rgba(102, 126, 234, 0.7), 0 0 0 15px rgba(102, 126, 234, 0.1), 0 0 0 30px rgba(102, 126, 234, 0.05);
         transform: scale(1.02);
     }
+
     100% {
         box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
         transform: scale(1);
@@ -84,11 +84,27 @@
 }
 
 @keyframes smoothBounce {
-    0%, 100% { transform: translateY(0) scale(1); }
-    20% { transform: translateY(-5px) scale(1.02); }
-    40% { transform: translateY(-2px) scale(1.01); }
-    60% { transform: translateY(-3px) scale(1.01); }
-    80% { transform: translateY(-1px) scale(1.005); }
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    20% {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    40% {
+        transform: translateY(-2px) scale(1.01);
+    }
+
+    60% {
+        transform: translateY(-3px) scale(1.01);
+    }
+
+    80% {
+        transform: translateY(-1px) scale(1.005);
+    }
 }
 
 /* Chat Container - Reduced Size */
@@ -135,7 +151,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
@@ -155,8 +171,13 @@
 }
 
 @keyframes headerShimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .chat-header-content {
@@ -206,8 +227,17 @@
 }
 
 @keyframes statusPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.1); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
 }
 
 /* Chat Body - Reduced Padding */
@@ -282,6 +312,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -406,15 +437,27 @@
     animation: typingDot 1.6s infinite ease-in-out;
 }
 
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.typing-dot:nth-child(2) { animation-delay: -0.16s; }
-.typing-dot:nth-child(3) { animation-delay: 0s; }
+.typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0s;
+}
 
 @keyframes typingDot {
-    0%, 80%, 100% {
+
+    0%,
+    80%,
+    100% {
         transform: scale(0.8);
         opacity: 0.5;
     }
+
     40% {
         transform: scale(1.2);
         opacity: 1;
@@ -525,7 +568,7 @@
         bottom: 20px;
         right: 20px;
     }
-    
+
     .chat-container {
         width: calc(100vw - 40px);
         max-width: 300px;
@@ -533,7 +576,7 @@
         bottom: 80px;
         right: -10px;
     }
-    
+
     .chat-toggle {
         width: 45px;
         height: 45px;
@@ -548,15 +591,15 @@
         left: 10px;
         height: 380px;
     }
-    
+
     .message-content {
         max-width: 200px;
     }
-    
+
     .chat-body {
         padding: 12px;
     }
-    
+
     .chat-input {
         padding: 12px;
     }
@@ -576,12 +619,12 @@
         border: 3px solid #000;
         background: rgba(255, 255, 255, 1);
     }
-    
+
     .message-content {
         border: 2px solid #000;
         background: rgba(255, 255, 255, 1);
     }
-    
+
     .chat-header {
         background: #000;
     }
@@ -589,6 +632,7 @@
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
     .chat-toggle,
     .chat-container,
     .message,
@@ -597,12 +641,12 @@
         transition: none;
         animation: none;
     }
-    
+
     .typing-dot,
     .status-indicator {
         animation: none;
     }
-    
+
     .chat-header::after {
         animation: none;
     }
@@ -614,44 +658,44 @@
         background: rgba(26, 32, 44, 0.95);
         border-color: rgba(255, 255, 255, 0.1);
     }
-    
+
     .chat-body {
         background: linear-gradient(180deg, rgba(26, 32, 44, 0.9) 0%, rgba(45, 55, 72, 0.9) 100%);
     }
-    
+
     .message-content {
         background: rgba(45, 55, 72, 0.9);
         color: #e2e8f0;
         border-color: rgba(255, 255, 255, 0.1);
     }
-    
+
     .bot-message .message-content {
         background: rgba(45, 55, 72, 0.95);
         color: #e2e8f0;
     }
-    
+
     .welcome-message {
         background: rgba(102, 126, 234, 0.15);
         border-color: rgba(102, 126, 234, 0.3);
     }
-    
+
     .welcome-message p {
         color: #cbd5e0;
     }
-    
+
     .input-group {
         background: rgba(45, 55, 72, 0.8);
         border-color: rgba(102, 126, 234, 0.2);
     }
-    
+
     .input-group input {
         color: #e2e8f0;
     }
-    
+
     .input-group input::placeholder {
         color: #718096;
     }
-    
+
     .chat-input {
         background: rgba(26, 32, 44, 0.95);
         border-color: rgba(255, 255, 255, 0.1);
@@ -679,6 +723,7 @@ html {
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
