@@ -918,6 +918,215 @@
     margin-top: clamp(4px, 1vw, 8px) !important;
 }
 
+/* Desktop reductions - with ORIGINAL IMAGE SIZES maintained */
+@media (min-width: 992px) {
+    .project-card {
+        min-height: 343px;
+        /* Increased by 3px from 340px */
+    }
+
+    .project-image {
+        height: clamp(220px, 40vw, 300px);
+        /* ✅ EXACT ORIGINAL SIZE */
+    }
+
+    .project-content {
+        padding: clamp(14px, 2.5vw, 18px);
+    }
+
+    .project-category {
+        font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+        padding: clamp(2px, 0.6vw, 4px) clamp(6px, 1.5vw, 10px);
+        margin-bottom: clamp(4px, 1vw, 6px);
+    }
+
+    .project-title {
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        line-height: 1.25;
+        margin-bottom: clamp(6px, 1.5vw, 8px);
+        -webkit-line-clamp: 2;
+    }
+
+    .project-description {
+        font-size: clamp(0.8rem, 1.8vw, 0.85rem);
+        line-height: 1.45;
+        margin-bottom: clamp(8px, 2vw, 12px);
+        -webkit-line-clamp: 2;
+    }
+
+    .tech-tag {
+        font-size: clamp(0.65rem, 1.4vw, 0.75rem);
+        padding: clamp(3px, 0.8vw, 5px) clamp(8px, 2vw, 12px);
+    }
+
+    .project-action-btn {
+        width: clamp(32px, 7vw, 36px);
+        height: clamp(32px, 7vw, 36px);
+        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    }
+
+    .project-header {
+        margin-bottom: clamp(8px, 2vw, 12px);
+        gap: clamp(8px, 2vw, 12px);
+    }
+
+    .project-tech {
+        gap: clamp(3px, 0.8vw, 5px);
+        margin-top: auto;
+    }
+
+    .carousel-nav {
+        width: clamp(28px, 6vw, 32px);
+        height: clamp(28px, 6vw, 32px);
+    }
+
+    .carousel-nav i {
+        font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+    }
+
+    .carousel-dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .carousel-dot.active {
+        width: 15px;
+    }
+
+    .carousel-controls {
+        bottom: clamp(6px, 1.5vw, 10px);
+        padding: 4px 10px;
+    }
+
+    .projects-grid {
+        gap: clamp(16px, 2.5vw, 24px);
+    }
+
+    .project-header-right {
+        gap: clamp(4px, 1vw, 6px);
+    }
+
+    .project-action-btn::after {
+        font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+        padding: 4px 8px;
+    }
+
+    #projects {
+        padding: clamp(50px, 7vw, 70px) 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .project-card {
+        min-height: 323px;
+    }
+
+    /* Keep same image size - no override needed */
+    /* Original clamp(220px, 40vw, 300px) will apply */
+
+    .project-content {
+        padding: 16px;
+    }
+
+    .project-category {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        margin-bottom: 5px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .project-description {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+
+    .project-action-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    .project-header {
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .project-card {
+        min-height: 303px;
+    }
+
+    /* Keep same image size - no override needed */
+    /* Original clamp(220px, 40vw, 300px) will apply */
+
+    .project-content {
+        padding: 14px;
+    }
+
+    .project-category {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+        margin-bottom: 4px;
+    }
+
+    .project-title {
+        font-size: 1.05rem;
+        margin-bottom: 5px;
+    }
+
+    .project-description {
+        font-size: 0.8rem;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+
+    .tech-tag {
+        font-size: 0.68rem;
+        padding: 2px 8px;
+    }
+
+    .project-action-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .project-header {
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+
+    .project-tech {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .project-card {
+        min-height: 480px;
+    }
+
+    .project-image {
+        height: clamp(200px, 40vw, 280px);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: clamp(20px, 4vw, 28px);
+    }
+}
+
 @media (min-width: 769px) {
     .project-content {
         padding: clamp(16px, 3.5vw, 24px);
@@ -1044,17 +1253,6 @@
     #projects .btn-primary.btn-lg {
         font-size: clamp(0.75rem, 3vw, 0.9rem);
         padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
-    }
-}
-
-@media (max-width: 991.98px) {
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: clamp(20px, 4vw, 28px);
-    }
-
-    .project-image {
-        height: clamp(200px, 35vw, 260px);
     }
 }
 

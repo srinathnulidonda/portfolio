@@ -1,4 +1,47 @@
 const projectsData = [
+
+
+
+  {
+    id: 'cinebrain-entertainment-platform',
+    title: 'CineBrain - AI Entertainment Platform',
+    category: 'AI/ML Web App',
+    filters: ['web', 'ml', 'fullstack'],
+    description: 'AI-powered entertainment recommendation platform with personalized movie, TV show, and anime suggestions. Features advanced user management, reviews, and intelligent content discovery.',
+    techStack: ['Flask', 'PostgreSQL', 'Redis', 'JavaScript ES6+', 'Bootstrap', 'TMDB API', 'JWT', 'Cloudinary'],
+    imageSrc: 'assets/images/projects/cinebrain.png',
+    imageAlt: 'CineBrain Entertainment Platform',
+    liveUrl: 'https://cinebrain.vercel.app/',
+    codeUrl: 'https://github.com/yourusername/cinebrain',
+    aosDelay: 300
+  },
+  {
+    id: 'weather-web',
+    title: 'Weatherly Web App',
+    category: 'Full Stack Web App',
+    filters: ['web', 'api'],
+    description: 'Modern weather application with real-time data, dynamic theming, weather animations, and PWA support. Features Flask backend and responsive frontend.',
+    techStack: ['Flask', 'Python', 'JavaScript', 'CSS3', 'OpenWeather API', 'PWA'],
+    imageSrc: 'assets/images/projects/weatherly-web.png',
+    imageAlt: 'Weatherly Weather Application',
+    liveUrl: "https://getweatherly.vercel.app/",
+    codeUrl: 'https://github.com/Srinathnulidonda/weatherly',
+    aosDelay: 300
+  },
+  {
+    id: 'weatherly-flutter-app',
+    title: 'Weatherly Mobile App',
+    category: 'Mobile Application',
+    filters: ['mobile', 'flutter'],
+    description: 'Native Flutter weather app with dynamic theming, weather animations, and real-time forecasts. Built with Material 3 design and offline support.',
+    techStack: ['Flutter', 'Dart', 'Material 3', 'REST API'],
+    imageSrc: 'assets/images/projects/weatherly-app.png',
+    imageAlt: 'Weatherly Flutter Weather Application',
+    liveUrl: null,
+    codeUrl: 'https://github.com/Srinathnulidonda/weatherly',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=10lPOkrf2HACA6ht-cirq_ubcW6adB_W2',
+    aosDelay: 300
+  },
   {
     id: 'manga-app',
     title: 'Manga Reading App',
@@ -6,11 +49,51 @@ const projectsData = [
     filters: ['mobile'],
     description: 'A feature-rich mobile application for manga enthusiasts built with Flutter. Includes reading features, bookmarks, and offline reading capabilities.',
     techStack: ['Flutter', 'Dart', 'Mobile'],
-    imageSrc: 'assets/images/projects/manga.jpg',
+    imageSrc: 'assets/images/projects/manga-app.png',
     imageAlt: 'Manga App Screenshot',
-    liveUrl: null,
+    liveUrl: "https://drive.google.com/uc?export=download&id=1ROMiwMhnldXHI2kZCt9bnl9j4ESQlVZD",
     codeUrl: 'https://github.com/Srinathnulidonda/manga-app',
     aosDelay: 100
+  },
+  {
+    id: 'agriprice-tracker',
+    title: 'AgriPrice Tracker',
+    category: 'Web App',
+    filters: ['web', 'ml'],
+    description: 'AI-powered agricultural price prediction platform with real-time market data, trend analysis, and 7-day price forecasting using Random Forest ML model.',
+    techStack: ['Flask', 'Python', 'Scikit-learn', 'Bootstrap', 'jQuery'],
+    imageSrc: 'assets/images/projects/agriprice-tracker.png',
+    imageAlt: 'AgriPrice Tracker',
+    liveUrl: 'https://agriprice-tracker.onrender.com',
+    codeUrl: 'https://github.com/srinathnulidonda/agriprice-tracker',
+    aosDelay: 300
+  },
+  {
+    id: 'nalanda-school-website',
+    title: 'Nalanda High School Armoor Website',
+    category: 'Educational Website',
+    filters: ['web', 'responsive', 'education'],
+    description: 'Comprehensive educational website for Nalanda High School Armoor featuring responsive design, interactive galleries, admission forms, academic program showcases, and integrated contact management system.',
+    techStack: ['HTML5', 'CSS3', 'Bootstrap 5.3', 'AOS', 'Lightbox2', 'JavaScript'],
+    imageSrc: 'assets/images/projects/nhs.png',
+    imageAlt: 'Nalanda High School Armoor Website',
+    liveUrl: 'https://nalandahighschool.vercel.app/',
+    codeUrl: 'https://github.com/srinathnulidonda/nalandahighschool',
+    aosDelay: 200
+  },
+
+  {
+    id: 'drug-discovery',
+    title: 'Drug Discovery Platform',
+    category: 'Healthcare AI',
+    filters: ['web', 'ml'],
+    description: 'AI-powered drug discovery platform using machine learning algorithms to analyze molecular structures and predict drug efficacy.',
+    techStack: ['Flask', 'Machine Learning', 'HTML/CSS/JS'],
+    imageSrc: 'assets/images/projects/drug.png',
+    imageAlt: 'Drug Discovery Platform',
+    liveUrl: null,
+    codeUrl: 'https://github.com/Srinathnulidonda',
+    aosDelay: 200
   },
   {
     id: 'travel-recommendation',
@@ -26,26 +109,13 @@ const projectsData = [
     aosDelay: 200
   },
   {
-    id: 'weather-app',
-    title: 'Weather Forecast App',
-    category: 'Mobile App',
-    filters: ['mobile'],
-    description: 'Beautiful and intuitive weather application built with Flutter, providing real-time weather updates, forecasts, and location-based services.',
-    techStack: ['Flutter', 'Dart', 'API Integration'],
-    imageSrc: 'assets/images/projects/1.png',
-    imageAlt: 'Weather App',
-    liveUrl: null,
-    codeUrl: 'https://github.com/Srinathnulidonda',
-    aosDelay: 300
-  },
-  {
     id: 'travel-newyork',
     title: 'Discover New York',
     category: 'Travel Website',
     filters: ['web', 'travel'],
     description: 'Interactive travel guide website for New York City featuring attractions, restaurants, and travel tips with responsive design and smooth animations.',
     techStack: ['HTML5', 'CSS3', 'JavaScript'],
-    imageSrc: 'assets/images/projects/newyork.png',
+    imageSrc: 'assets/images/projects/travel-nyc.png',
     imageAlt: 'Travel New York',
     liveUrl: 'https://travel-newyork.vercel.app/',
     codeUrl: 'https://github.com/Srinathnulidonda/travel-newyork',
@@ -58,7 +128,7 @@ const projectsData = [
     filters: ['web', 'travel'],
     description: 'Comprehensive travel website showcasing Rome\'s historical sites, culture, and cuisine with interactive maps and virtual tours.',
     techStack: ['HTML5', 'CSS3', 'JavaScript'],
-    imageSrc: 'assets/images/projects/rome.png',
+    imageSrc: 'assets/images/projects/travel-rome.png',
     imageAlt: 'Travel Rome',
     liveUrl: 'https://travel-rome.vercel.app/',
     codeUrl: 'https://github.com/Srinathnulidonda/travel-rome',
@@ -71,9 +141,9 @@ const projectsData = [
     filters: ['web', 'travel'],
     description: 'Elegant travel guide for Paris featuring iconic landmarks, art galleries, and culinary experiences with a focus on French culture and beauty.',
     techStack: ['HTML5', 'CSS3', 'JavaScript'],
-    imageSrc: 'assets/images/projects/paris.png',
+    imageSrc: 'assets/images/projects/travel-paris.png',
     imageAlt: 'Travel Paris',
-    liveUrl: 'https://travel-paris-orpin.vercel.app/',
+    liveUrl: 'https://travelparis.vercel.app/',
     codeUrl: 'https://github.com/Srinathnulidonda/travel-paris',
     aosDelay: 300
   },
@@ -90,32 +160,10 @@ const projectsData = [
     codeUrl: 'https://github.com/Srinathnulidonda/e-commerce',
     aosDelay: 100
   },
-  {
-    id: 'drug-discovery',
-    title: 'Drug Discovery Platform',
-    category: 'Healthcare AI',
-    filters: ['web', 'ml'],
-    description: 'AI-powered drug discovery platform using machine learning algorithms to analyze molecular structures and predict drug efficacy.',
-    techStack: ['Flask', 'Machine Learning', 'HTML/CSS/JS'],
-    imageSrc: 'assets/images/projects/drug.png',
-    imageAlt: 'Drug Discovery Platform',
-    liveUrl: null,
-    codeUrl: 'https://github.com/Srinathnulidonda',
-    aosDelay: 200
-  },
-  {
-    id: 'agriculture-prediction',
-    title: 'Agriculture Price Prediction',
-    category: 'AgriTech AI',
-    filters: ['web', 'ml'],
-    description: 'Smart agriculture platform that predicts crop prices using weather conditions and market data analysis to help farmers make informed decisions.',
-    techStack: ['Flask', 'ML Algorithms', 'Weather API', 'Data Analysis'],
-    imageSrc: 'assets/images/projects/agriculture-prediction.jpg',
-    imageAlt: 'Agriculture Price Prediction',
-    liveUrl: null,
-    codeUrl: 'https://github.com/Srinathnulidonda',
-    aosDelay: 300
-  }
+
+
+
+
 ];
 
 function createProjectCard(project, isMobile = false) {

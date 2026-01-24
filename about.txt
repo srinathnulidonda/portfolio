@@ -1,9 +1,0 @@
-About Me
-
-I’m Srinath Nulidonda, a full-stack developer, Machine Learning & Artificial Intelligence enthusiast from Hyderabad, India. I build smart, scalable, and visually refined digital products — from intuitive web apps to AI-driven solutions.
-
-My work blends creativity with logic: I love crafting clean user experiences on the front end while architecting solid, efficient systems on the back end. Over time, I’ve developed and deployed projects across diverse domains — travel, healthcare, agriculture, and entertainment — using technologies like React, Flutter, Flask, TensorFlow, and Firebase.
-
-I believe great software doesn’t just work — it feels right. That’s why every line of code I write aims to solve real problems while delivering something people actually enjoy using.
-
-When I’m not coding, I explore new tech trends, design systems, and constantly challenge myself to build better, smarter, and faster.
