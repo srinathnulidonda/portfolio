@@ -37,9 +37,8 @@ const projectsData = [
     techStack: ['Flutter', 'Dart', 'Material 3', 'REST API'],
     imageSrc: 'assets/images/projects/weatherly-app.png',
     imageAlt: 'Weatherly Flutter Weather Application',
-    liveUrl: null,
+    liveUrl: 'https://drive.google.com/uc?export=download&id=10lPOkrf2HACA6ht-cirq_ubcW6adB_W2',
     codeUrl: 'https://github.com/Srinathnulidonda/weatherly',
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=10lPOkrf2HACA6ht-cirq_ubcW6adB_W2',
     aosDelay: 300
   },
   {
