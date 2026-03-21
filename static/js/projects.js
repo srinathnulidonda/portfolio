@@ -6,7 +6,7 @@ const projectsData = [
     category: 'Full Stack Web App',
     filters: ['web'],
     description: 'A beautiful, fast, and secure personal library for your important links. Save once, use forever. Features smart folders, tagging, lightning-fast search, real-time sync, and custom branded short links with analytics.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Flask', 'PostgreSQL', 'Firebase', 'Redis', 'Vite', 'Framer Motion'],
+    techStack: ['React', 'Tailwind CSS', 'Flask', 'PostgreSQL', 'Firebase', 'Redis', 'Vite', 'Framer Motion'],
     imageSrc: 'assets/images/projects/savlink.png',
     imageAlt: 'Savlink Personal Web Library Dashboard',
     liveUrl: 'https://savlink.vercel.app',
