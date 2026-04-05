@@ -48,18 +48,6 @@ const projectsData = [
     codeUrl: 'https://github.com/srinathnulidonda/justscroll'
   },
   {
-    id: 'weather-web',
-    title: 'Weatherly Web App',
-    category: 'Full Stack Web App',
-    filters: ['web'],
-    description: 'Modern weather application with real-time data, dynamic theming, weather animations, and PWA support. Features Flask backend and responsive frontend.',
-    techStack: ['Flask', 'Python', 'JavaScript', 'CSS3', 'OpenWeather API', 'PWA'],
-    imageSrc: 'assets/images/projects/weatherly-web.png',
-    imageAlt: 'Weatherly Weather Application',
-    liveUrl: 'https://getweatherly.vercel.app/',
-    codeUrl: 'https://github.com/Srinathnulidonda/weatherly'
-  },
-  {
     id: 'galaxy-s26-privacy-display',
     title: 'Galaxy S26 Ultra - Privacy Display Demo',
     category: 'Interactive 3D Experience',
@@ -70,6 +58,18 @@ const projectsData = [
     imageAlt: 'Galaxy S26 Ultra Privacy Display Interactive Demo',
     liveUrl: 'https://s26-ultra.vercel.app/',
     codeUrl: 'https://github.com/srinathnulidonda/s26-ultra-3d'
+  },
+  {
+    id: 'weather-web',
+    title: 'Weatherly Web App',
+    category: 'Full Stack Web App',
+    filters: ['web'],
+    description: 'Modern weather application with real-time data, dynamic theming, weather animations, and PWA support. Features Flask backend and responsive frontend.',
+    techStack: ['Flask', 'Python', 'JavaScript', 'CSS3', 'OpenWeather API', 'PWA'],
+    imageSrc: 'assets/images/projects/weatherly-web.png',
+    imageAlt: 'Weatherly Weather Application',
+    liveUrl: 'https://getweatherly.vercel.app/',
+    codeUrl: 'https://github.com/Srinathnulidonda/weatherly'
   },
   {
     id: 'weatherly-flutter-app',
