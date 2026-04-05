@@ -25,6 +25,29 @@ const projectsData = [
     codeUrl: 'https://github.com/srinathnulidonda/cinebrain'
   },
   {
+    id: 'justscroll-manga-reader',
+    title: 'JustScroll - Manga Reader Platform',
+    category: 'Full Stack Web',
+    filters: ['web', 'mobile'],
+    description: 'Full-stack manga reader platform with multi-source aggregation, advanced reading modes, user authentication, and cross-platform sync between web and mobile apps.', techStack: ['React', 'Flutter', 'FastAPI', 'PostgreSQL', 'Redis', 'JWT Auth', 'Tailwind CSS'],
+    imageSrc: 'assets/images/projects/justscroll.png',
+    imageAlt: 'JustScroll Manga Reader Platform',
+    liveUrl: 'https://justscroll.vercel.app',
+    codeUrl: 'https://github.com/srinathnulidonda/justscroll'
+  },
+  {
+    id: 'justscroll-mobile',
+    title: 'JustScroll - Manga Reader Mobile',
+    category: 'Mobile Application',
+    filters: ['mobile'],
+    description: 'Native Flutter manga reader with multi-source aggregation, offline reading, advanced reader modes (single page & long strip), bookmarks, reading history sync, and Material 3 design with light/dark themes.',
+    techStack: ['Flutter', 'Dart', 'Riverpod', 'GoRouter', 'Material 3', 'CachedNetworkImage', 'FastAPI'],
+    imageSrc: 'assets/images/projects/justscroll-mobile.png',
+    imageAlt: 'JustScroll Mobile Manga Reader App',
+    liveUrl: 'https://github.com/srinathnulidonda/justscroll/releases/download/v1.0.0/justscroll-v1.0.0-arm64.apk',
+    codeUrl: 'https://github.com/srinathnulidonda/justscroll'
+  },
+  {
     id: 'weather-web',
     title: 'Weatherly Web App',
     category: 'Full Stack Web App',
@@ -37,6 +60,18 @@ const projectsData = [
     codeUrl: 'https://github.com/Srinathnulidonda/weatherly'
   },
   {
+    id: 'galaxy-s26-privacy-display',
+    title: 'Galaxy S26 Ultra - Privacy Display Demo',
+    category: 'Interactive 3D Experience',
+    filters: ['web'],
+    description: 'Interactive 3D demo showcasing advanced privacy display technology with real-time physics simulation, photorealistic phone model, and dynamic privacy controls.',
+    techStack: ['React', 'Vite', 'CSS3 3D', 'Responsive Design'],
+    imageSrc: 'assets/images/projects/galaxy-s26-privacy.png',
+    imageAlt: 'Galaxy S26 Ultra Privacy Display Interactive Demo',
+    liveUrl: 'https://s26-ultra.vercel.app/',
+    codeUrl: 'https://github.com/srinathnulidonda/s26-ultra-3d'
+  },
+  {
     id: 'weatherly-flutter-app',
     title: 'Weatherly Mobile App',
     category: 'Mobile Application',
@@ -47,18 +82,6 @@ const projectsData = [
     imageAlt: 'Weatherly Flutter Weather Application',
     liveUrl: 'https://drive.google.com/uc?export=download&id=10lPOkrf2HACA6ht-cirq_ubcW6adB_W2',
     codeUrl: 'https://github.com/Srinathnulidonda/weatherly'
-  },
-  {
-    id: 'manga-app',
-    title: 'Manga Reading App',
-    category: 'Mobile App',
-    filters: ['mobile'],
-    description: 'A feature-rich mobile application for manga enthusiasts built with Flutter. Includes reading features, bookmarks, and offline reading capabilities.',
-    techStack: ['Flutter', 'Dart', 'Mobile'],
-    imageSrc: 'assets/images/projects/manga-app.png',
-    imageAlt: 'Manga App Screenshot',
-    liveUrl: 'https://drive.google.com/uc?export=download&id=1ROMiwMhnldXHI2kZCt9bnl9j4ESQlVZD',
-    codeUrl: 'https://github.com/Srinathnulidonda/manga-app'
   },
   {
     id: 'agriprice-tracker',
