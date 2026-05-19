@@ -5,9 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srinath Nulidonda | Full Stack Developer & AI Specialist</title>
+  <title>Srinath Nulidonda | Full Stack Developer</title>
   <meta name="description"
-    content="Srinath Nulidonda — Full Stack Developer & AI Specialist from Hyderabad, India. Building modern web apps with React, mobile apps with Flutter, and ML solutions with Flask.">
+    content="Srinath Nulidonda — Full Stack Developer from Hyderabad, India. Building modern web apps with React, mobile apps with Flutter, and scalable backend systems.">
   <meta name="keywords"
     content="Srinath Nulidonda, Full Stack Developer, React Developer, AI Specialist, Flutter, Flask, Machine Learning, Next.js, Portfolio, Hyderabad, India">
   <meta name="author" content="Srinath Nulidonda">
@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://srinathnulidonda.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Srinath Nulidonda Portfolio">
-  <meta property="og:title" content="Srinath Nulidonda | Full Stack Developer & AI Specialist">
+  <meta property="og:title" content="Srinath Nulidonda | Full Stack Developer">
   <meta property="og:description"
     content="Full Stack Developer & AI Specialist from Hyderabad. Crafting modern web apps with React, mobile apps with Flutter, and intelligent ML solutions.">
   <meta property="og:url" content="https://srinathnulidonda.vercel.app/">
@@ -24,7 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@srinath2973">
-  <meta name="twitter:title" content="Srinath Nulidonda | Full Stack Developer & AI Specialist">
+  <meta name="twitter:title" content="Srinath Nulidonda | Full Stack Developer">
   <meta name="twitter:description"
     content="Full Stack Developer & AI Specialist from Hyderabad. Building modern React, Flutter, and ML solutions.">
   <meta name="twitter:image" content="https://srinathnulidonda.vercel.app/assets/images/profile-2.jpg">
@@ -422,10 +422,11 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <h3><span class="footer-brand-name">Srinath <span class="footer-name-highlight">Nulidonda</span></span></h3>
-            <span class="footer-tagline">Full Stack Developer & AI Specialist</span>
+            <span class="footer-tagline">Full Stack Developer</span>
           </div>
           <p class="footer-description">Passionate developer crafting digital experiences with modern technologies.
-            Specializing in web apps, mobile development, and AI solutions. Let's build something amazing together.</p>
+            Specializing in web apps, mobile development, and scalable backends.
+            Let's build something amazing together.</p>
           <div class="footer-social" role="group" aria-label="Social media links">
             <a href="https://github.com/Srinathnulidonda" class="footer-social-link" aria-label="GitHub"
               rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i></a>
@@ -470,7 +471,8 @@
         <div class="footer-bottom-content">
           <div class="footer-copyright">
             <p>
-              <span class="copyright-line">© 2025 <a href="#home" class="footer-copyright-highlight">Srinath
+              <span class="copyright-line">© <span class="copyright-year"></span>
+                <a href="#home" class="footer-copyright-highlight">Srinath
                   Nulidonda</a>.</span>
               <span class="copyright-line">All rights reserved. Made with <span class="heart">❤️</span> and lots of
                 <span class="coffee">☕</span></span>
@@ -500,6 +502,9 @@
   <script src="/static/js/projects.js" defer></script>
   <script src="/static/js/contact.js" defer></script>
   <script src="/static/js/chatbot.js" defer></script>
+  <script>
+    document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
