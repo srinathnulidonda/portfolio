@@ -56,20 +56,6 @@
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.18);
 }
 
-.about-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 16px;
-  background: rgba(40, 167, 69, 0.08);
-  border: 1px solid rgba(40, 167, 69, 0.2);
-  border-radius: var(--radius-full);
-  color: var(--success);
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-  letter-spacing: 0.3px;
-}
-
 .about-heading {
   font-family: var(--font-primary);
   font-size: clamp(1.5rem, 3.5vw, 2rem);
@@ -208,11 +194,6 @@
   transform: translateY(-2px);
 }
 
-.about-btn:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
 @media (max-width: 900px) {
   .about-layout {
     grid-template-columns: 1fr;
@@ -231,11 +212,6 @@
 
   .about-heading {
     text-align: center;
-  }
-
-  .about-badge {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .about-intro {
@@ -342,11 +318,6 @@
     font-size: 0.82rem;
   }
 
-  .about-badge {
-    font-size: 0.72rem;
-    padding: 5px 12px;
-  }
-
   .service-item {
     font-size: 0.7rem;
     padding: 5px 10px;
@@ -364,53 +335,6 @@
   .about-btn {
     font-size: 0.75rem;
     padding: 8px 14px;
-  }
-}
-
-@media (max-width: 320px) {
-  .about-avatar img {
-    max-width: 130px;
-  }
-
-  .about-heading {
-    font-size: 1rem;
-  }
-
-  .about-intro {
-    font-size: 0.78rem;
-  }
-
-  .about-badge {
-    font-size: 0.65rem;
-    padding: 4px 10px;
-  }
-
-  .service-item {
-    font-size: 0.65rem;
-    padding: 4px 8px;
-    gap: 5px;
-  }
-
-  .service-item i {
-    font-size: 0.7rem;
-  }
-
-  .tech-group-label {
-    font-size: 0.55rem;
-  }
-
-  .tech-pills .tech-pill {
-    font-size: 0.55rem;
-    padding: 2px 5px;
-  }
-
-  .about-btn {
-    font-size: 0.7rem;
-    padding: 7px 12px;
-  }
-
-  .about-cta {
-    gap: 8px;
   }
 }
 

@@ -10,6 +10,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +20,24 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.visually-hidden-focusable {
+  position: absolute;
+  top: -60px;
+  left: 12px;
+  z-index: 10000;
+  background: var(--primary);
+  color: var(--white);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.visually-hidden-focusable:focus {
+  top: 12px;
 }
 
 ::selection {
@@ -57,7 +76,26 @@ a {
   outline-offset: 2px;
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: var(--container-xxl);
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: var(--container-xxxl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: var(--container-huge);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -69,6 +107,7 @@ a {
 }
 
 @media print {
+
   .chat-widget,
   .back-to-top,
   .navbar {

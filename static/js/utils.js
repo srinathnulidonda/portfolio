@@ -1,4 +1,4 @@
-/* static/js/utils.js */
+// static/js/utils.js
 const Utils = {
   throttle(func, limit) {
     let inThrottle;
@@ -32,34 +32,6 @@ const Utils = {
     return div.innerHTML;
   },
 
-  showNotification(message, type = 'info') {
-    const existing = document.querySelectorAll('.notification');
-    existing.forEach(n => n.remove());
-
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-      <div class="notification-content">
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'} me-2"></i>${Utils.escapeHtml(message)}
-      </div>
-      <button class="notification-close" aria-label="Close notification">&times;</button>
-    `;
-    document.body.appendChild(notification);
-    requestAnimationFrame(() => (notification.style.transform = 'translateX(0)'));
-
-    const remove = () => {
-      notification.style.transform = 'translateX(400px)';
-      setTimeout(() => notification.remove(), 300);
-    };
-
-    notification.querySelector('.notification-close').addEventListener('click', remove);
-    setTimeout(remove, 5000);
-  },
-
-  formatDate(date) {
-    return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(date));
-  },
-
   getTime() {
     return new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
   },
@@ -72,10 +44,6 @@ const Utils = {
 
   isMobile() {
     return window.innerWidth <= 768;
-  },
-
-  supportsIntersectionObserver() {
-    return 'IntersectionObserver' in window;
   }
 };
 

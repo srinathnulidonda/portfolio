@@ -10,12 +10,9 @@
   --white: #ffffff;
   --black: #000000;
   --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
   --danger: #dc3545;
   --text-primary: #000000;
   --text-secondary: #666666;
-  --text-muted: #999999;
   --text-body: #495057;
   --text-light: rgba(255, 255, 255, 0.7);
   --text-light-muted: rgba(255, 255, 255, 0.5);
@@ -30,7 +27,6 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
   --shadow-primary: 0 4px 15px rgba(13, 110, 253, 0.3);
   --shadow-primary-lg: 0 8px 25px rgba(13, 110, 253, 0.3);
-  --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 20px;
@@ -53,4 +49,7 @@
   --chat-mobile-width: min(340px, calc(100vw - 24px));
   --chat-mobile-height: min(500px, 65vh);
   --chat-toggle-mobile: 50px;
+  --container-xxl: 1320px;
+  --container-xxxl: 1460px;
+  --container-huge: 1600px;
 }

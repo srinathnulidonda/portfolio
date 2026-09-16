@@ -185,12 +185,8 @@
   height: clamp(220px, 40vw, 300px);
   overflow: hidden;
   background: var(--light);
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-.project-image:hover {
   cursor: zoom-in;
+  flex-shrink: 0;
 }
 
 .project-carousel {
@@ -201,7 +197,6 @@
 
 .project-carousel-inner {
   display: flex;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
 }
 
@@ -215,8 +210,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -229,83 +222,6 @@
   object-fit: contain;
   padding: clamp(12px, 3vw, 20px);
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-}
-
-.project-carousel-item img:not([src]) {
-  animation: loading 1.5s infinite;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(32px, 7vw, 38px);
-  height: clamp(32px, 7vw, 38px);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 5;
-}
-
-.project-card:hover .carousel-nav {
-  opacity: 1;
-}
-
-.carousel-nav:hover {
-  background: var(--white);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-nav.prev {
-  left: clamp(8px, 2vw, 12px);
-}
-
-.carousel-nav.next {
-  right: clamp(8px, 2vw, 12px);
-}
-
-.carousel-nav i {
-  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-  color: var(--text-body);
-}
-
-.carousel-controls {
-  position: absolute;
-  bottom: clamp(8px, 2vw, 12px);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 6px 12px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  z-index: 5;
-}
-
-.carousel-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.3);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  padding: 0;
-}
-
-.carousel-dot.active {
-  background: var(--primary);
-  width: 18px;
-  border-radius: 3px;
 }
 
 .project-content {
@@ -469,52 +385,6 @@
   transform: translateY(-2px);
 }
 
-.skeleton-card {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-.skeleton-poster {
-  width: 100%;
-  height: clamp(200px, 40vw, 280px);
-  border-radius: var(--card-radius) var(--card-radius) 0 0;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.06);
-}
-
-.skeleton-info {
-  padding: clamp(16px, 3.5vw, 24px);
-}
-
-.skeleton-title,
-.skeleton-meta {
-  background: rgba(0, 0, 0, 0.06);
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.skeleton-title {
-  height: clamp(16px, 3.5vw, 20px);
-  margin-bottom: clamp(8px, 2vw, 12px);
-  width: 80%;
-}
-
-.skeleton-meta {
-  height: clamp(12px, 2.8vw, 16px);
-  width: 60%;
-}
-
-.skeleton-shimmer {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
-  animation: shimmer 1.5s infinite;
-}
-
 @media (min-width: 1400px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -617,10 +487,6 @@
 
   .projects-carousel-wrapper .project-card:hover {
     transform: none;
-  }
-
-  .carousel-nav {
-    opacity: 1;
   }
 
   .project-image {
@@ -748,9 +614,8 @@
 }
 
 @media print {
+
   .filter-buttons,
-  .carousel-nav,
-  .carousel-controls,
   .project-action-btn {
     display: none !important;
   }

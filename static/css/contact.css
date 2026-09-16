@@ -18,7 +18,8 @@
   z-index: 2;
 }
 
-.contact-info {
+.contact-info,
+.contact-form {
   background: var(--white);
   border-radius: var(--card-radius);
   padding: clamp(1.25rem, 4vw, 2rem);
@@ -29,7 +30,8 @@
   overflow: hidden;
 }
 
-.contact-info::after {
+.contact-info::after,
+.contact-form::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -41,24 +43,28 @@
   z-index: 3;
 }
 
-.contact-info:hover {
+.contact-info:hover,
+.contact-form:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(13, 110, 253, 0.1);
 }
 
-.contact-info:hover::after {
+.contact-info:hover::after,
+.contact-form:hover::after {
   width: 100%;
 }
 
-.contact-info h4 {
+.contact-info h3,
+.contact-form h3 {
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   font-weight: 700;
   color: var(--dark);
   position: relative;
 }
 
-.contact-info h4::after {
+.contact-info h3::after,
+.contact-form h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -70,7 +76,8 @@
   transition: width 0.3s ease;
 }
 
-.contact-info:hover h4::after {
+.contact-info:hover h3::after,
+.contact-form:hover h3::after {
   width: 100px;
 }
 
@@ -110,62 +117,6 @@
 
 .contact-links .text-muted {
   font-size: clamp(0.75rem, 2vw, 0.85rem);
-}
-
-.contact-form {
-  background: var(--white);
-  border-radius: var(--card-radius);
-  padding: clamp(1.25rem, 4vw, 2rem);
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition-bounce);
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-form::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-light));
-  transition: width 0.4s ease;
-  z-index: 3;
-}
-
-.contact-form:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(13, 110, 253, 0.1);
-}
-
-.contact-form:hover::after {
-  width: 100%;
-}
-
-.contact-form h4 {
-  font-size: clamp(1.4rem, 4vw, 1.8rem);
-  font-weight: 700;
-  color: var(--dark);
-  position: relative;
-}
-
-.contact-form h4::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), rgba(13, 110, 253, 0.3));
-  border-radius: 2px;
-  transition: width 0.3s ease;
-}
-
-.contact-form:hover h4::after {
-  width: 100px;
 }
 
 .form-label {
@@ -265,20 +216,21 @@
 }
 
 @media (max-width: 767.98px) {
+
   .contact-info,
   .contact-form {
     margin-bottom: 2rem;
     padding: 1.25rem;
   }
 
-  .contact-info h4,
-  .contact-form h4 {
+  .contact-info h3,
+  .contact-form h3 {
     font-size: 1.4rem;
     text-align: center;
   }
 
-  .contact-info h4::after,
-  .contact-form h4::after {
+  .contact-info h3::after,
+  .contact-form h3::after {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -290,13 +242,14 @@
 }
 
 @media (max-width: 575.98px) {
+
   .contact-info,
   .contact-form {
     padding: 1rem;
   }
 
-  .contact-info h4,
-  .contact-form h4 {
+  .contact-info h3,
+  .contact-form h3 {
     font-size: 1.3rem;
   }
 
@@ -307,8 +260,9 @@
 }
 
 @media (max-width: 375px) {
-  .contact-info h4,
-  .contact-form h4 {
+
+  .contact-info h3,
+  .contact-form h3 {
     font-size: 1.1rem;
   }
 
@@ -328,6 +282,7 @@
 }
 
 @media (hover: none) and (pointer: coarse) {
+
   .contact-info:hover,
   .contact-form:hover {
     transform: none;

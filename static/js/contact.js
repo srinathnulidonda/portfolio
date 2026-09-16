@@ -1,9 +1,9 @@
-/* static/js/contact.js */
+// static/js/contact.js
 const EMAILJS_CONFIG = {
-    SERVICE_ID: 'service_1atiujn',        
-    OWNER_TEMPLATE_ID: 'template_tl8dokg', 
-    CONFIRMATION_TEMPLATE_ID: 'template_5uil1fx', 
-    PUBLIC_KEY: 'PDZrWzWCWkcVj-8oj'         
+  SERVICE_ID: 'service_1atiujn',
+  OWNER_TEMPLATE_ID: 'template_tl8dokg',
+  CONFIRMATION_TEMPLATE_ID: 'template_5uil1fx',
+  PUBLIC_KEY: 'PDZrWzWCWkcVj-8oj'
 };
 
 (function () {
@@ -149,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
       showSuccess();
       Utils.trackEvent('contact_form_sent', { method: 'emailjs' });
     } catch (error) {
-      console.error('EmailJS Error:', error);
       showError(error.text || 'Failed to send message. Please try again.');
     } finally {
       setLoading(false);

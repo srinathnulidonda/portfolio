@@ -65,8 +65,13 @@
 }
 
 @keyframes rotateIn {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(90deg) scale(1); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(90deg) scale(1);
+  }
 }
 
 .chat-toggle::after {
@@ -88,9 +93,17 @@
 }
 
 @keyframes pulseBadge {
-  0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
-  70% { box-shadow: 0 0 0 8px rgba(220, 53, 69, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(220, 53, 69, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
 }
 
 .chat-toggle.pulse {
@@ -98,8 +111,15 @@
 }
 
 @keyframes pulseButton {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 .chat-toggle.subtle-bounce {
@@ -107,8 +127,15 @@
 }
 
 @keyframes subtleBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .chat-container {
@@ -158,8 +185,13 @@
 }
 
 @keyframes rotateGradient {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .chat-header-content {
@@ -207,8 +239,17 @@
 }
 
 @keyframes pulseStatus {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.8; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 }
 
 .chat-close {
@@ -301,6 +342,10 @@
   flex-shrink: 0;
 }
 
+.message-avatar.user-avatar {
+  background: linear-gradient(135deg, var(--secondary), #495057);
+}
+
 .message-content {
   max-width: 75%;
   padding: 8px 12px;
@@ -359,12 +404,27 @@
   animation: typingAnim 1.4s infinite;
 }
 
-.typing-dot:nth-child(2) { animation-delay: 0.2s; }
-.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes typingAnim {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
-  30% { transform: translateY(-8px); opacity: 1; }
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
 }
 
 .quick-replies {
@@ -473,6 +533,14 @@
 .whatsapp-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.chat-toggle:focus-visible,
+.quick-reply:focus-visible,
+.send-button:focus-visible,
+#messageInput:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
@@ -586,6 +654,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .chat-widget *,
   .chat-widget *::before,
   .chat-widget *::after {

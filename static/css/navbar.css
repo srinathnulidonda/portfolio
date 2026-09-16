@@ -1,5 +1,4 @@
 /* static/css/navbar.css */
-
 #mainNav {
   background-color: var(--navbar-bg);
   transition: all 0.4s ease;
@@ -217,10 +216,6 @@
   }
 
   .navbar-nav .nav-link::after {
-    display: none;
-  }
-
-  .navbar-nav::after {
     display: none;
   }
 
