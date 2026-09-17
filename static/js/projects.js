@@ -78,10 +78,10 @@ const projectsData = [
     category: 'Full Stack Web App',
     filters: ['web'],
     description: 'Responsive business website and service platform with service information, job postings, contact functionality, and a backend-powered management system.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Flask', 'PostgreSQL'],
-    imageSrc: 'assets/images/projects/sridhar-internet-services.png',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'FastApi', 'PostgreSQL'],
+    imageSrc: 'assets/images/projects/sridhar.png',
     imageAlt: 'Sridhar Internet Services business website',
-    liveUrl: null,
+    liveUrl: "https://sridharinternetservices.vercel.app",
     codeUrl: null
   },
   {
