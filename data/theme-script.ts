@@ -1,0 +1,2 @@
+// data/theme-script.ts
+export const THEME_SCRIPT = `(function(){var d=document.documentElement;var m=function(){return matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"};try{var t=localStorage.getItem("theme");d.setAttribute("data-theme",t==="light"||t==="dark"?t:m())}catch(e){d.setAttribute("data-theme",m())}})()`;
